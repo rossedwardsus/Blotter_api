@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.views import APIView
-from .models import Blotter
+#from .models import Blotter
 from rest_framework.response import Response
 from rest_framework.parsers import FileUploadParser, JSONParser, FormParser, MultiPartParser
 
@@ -16,7 +16,7 @@ class BlotterView(APIView):
     #parser_classes = [FormParser, MultiPartParser]
 
     def get(self, request, format=None):
-        blotter = Blotter.objects.all().order_by('-reporting_datetime')
+        #blotter = Blotter.objects.all().order_by('-reporting_datetime')
 	    #serializer_class = SightingSerializer
         #serializer = BlotterSerializer(blotter, many=True)
         #return Response(serializer.data)
