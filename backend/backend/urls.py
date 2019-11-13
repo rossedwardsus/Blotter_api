@@ -18,6 +18,6 @@ from django.urls import include, path
 #from .blotter.views import blotter
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('api/blotter/', include('backend.blotter.urls'))
 ]

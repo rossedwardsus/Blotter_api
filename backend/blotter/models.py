@@ -1,23 +1,17 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
-class Blotter(models.Model):
-    reporting_id = models.IntegerField(primary_key=True)
-    accident_type = models.DateTimeField(auto_now_add=True)
-    observation_type = models.CharField(max_length=100)
-    kill_type = models.CharField(max_length=100)
-    group_type = models.CharField(max_length=100)
-    number_of_tuskers = models.CharField(max_length=100, blank=True, default='')
-    number_of_tots = models.TextField()
-    cause_of_death = models.CharField(max_length=100)
-    gender = models.CharField(max_length=100)
-    #sex = models.CharField(max_length=100)
-    
-    reporting_datetime = models.DateTimeField()
+class BlotterModel(models.Model):
+    report_id = models.AutoField(primary_key=True)
+    crime_type = models.CharField(max_length=100)
+    crime_description = models.CharField(max_length=100)
+    crime_datetime = models.DateTimeField()
+    report_datetime = models.DateTimeField(default=datetime.utcnow())
 
     #objects = models.Manager()
 
     class Meta:
         db_table = "blotter"
-        ordering = ['reporting_datetime']
+        ordering = ['report_datetime']
