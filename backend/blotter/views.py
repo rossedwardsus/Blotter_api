@@ -5,6 +5,7 @@ from .models import BlotterModel
 from .serializer import BlotterSerializer
 from rest_framework.response import Response
 from rest_framework.parsers import FileUploadParser, JSONParser, FormParser, MultiPartParser
+from rest_framework import status
 
 # Create your views here.
 
@@ -51,10 +52,10 @@ class BlotterView(APIView):
         #print(serializer.data)
 
         if serializer.is_valid():
-        	serializer.save()
-        #    return Response(serializer.data, status=status.HTTP_201_CREATED)
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-        return Response({"serializer.data1": "data"})
+        #return Response({"serializer.data1": "data"})
 
         #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
