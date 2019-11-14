@@ -7,6 +7,7 @@ class BlotterModel(models.Model):
     report_id = models.AutoField(primary_key=True)
     crime_type = models.CharField(max_length=100)
     crime_description = models.CharField(max_length=100)
+    crime_address = models.CharField(max_length=100)
     crime_datetime = models.DateTimeField()
     report_datetime = models.DateTimeField(default=datetime.utcnow())
 

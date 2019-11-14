@@ -58,3 +58,37 @@ class BlotterView(APIView):
 
         #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+
+class BlotterViewCrime(APIView):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+
+    parser_classes = [JSONParser]
+
+    def get(self, request, *args, **kwargs):
+        #lookup_url_kwarg = "uid"
+        report_id = kwargs.get('report_id', 'Default Value if not there')
+        print(report_id)
+        report = BlotterModel.objects.get(report_id=int(report_id))
+        print(report)
+        #blotter = BlotterModel.objects.all().order_by('-report_datetime')
+        serializer = BlotterSerializer(report)
+        #print(serializer.data)
+        return Response(serializer.data)
+
+        #return Response({"message": "Hello, world!"})
+
+
+
+	#def post(self, request, format=None)
+		#sighting = SightingSerializer(data=request)
+		#sighting.is_valid()
+		# True
+		#sighting.validated_data
+		# OrderedDict([('title', ''), ('code', 'print("hello, world")\n'), ('linenos', False), ('language', 'python'), ('style', 'friendly')])
+		#sighting_saved = sighting.save()
+		# <Snippet: Snippet object>
+		#return Response({sighting_id: sighting_saved.sighting_id})
+

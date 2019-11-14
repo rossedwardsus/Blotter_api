@@ -18,5 +18,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.BlotterView.as_view(), name='index')
+    path('', views.BlotterView.as_view(), name='index'),
+    path('<int:report_id>', views.BlotterViewCrime.as_view(), name='index')
+
 ]
