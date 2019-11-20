@@ -26,18 +26,6 @@ class BlotterView(APIView):
 
 
 
-	#def post(self, request, format=None)
-		#sighting = SightingSerializer(data=request)
-		#sighting.is_valid()
-		# True
-		#sighting.validated_data
-		# OrderedDict([('title', ''), ('code', 'print("hello, world")\n'), ('linenos', False), ('language', 'python'), ('style', 'friendly')])
-		#sighting_saved = sighting.save()
-		# <Snippet: Snippet object>
-		#return Response({sighting_id: sighting_saved.sighting_id})
-
-
-
     def post(self, request, format=None):
         #serializer = BlotterSerializer(email=request.POST["email"], accident_type=request.POST["accident_type"], kill_type=request.POST["kill_type"], group_type=request.POST["group_type"], sex=request.POST["sex"])
         
@@ -82,14 +70,4 @@ class BlotterViewCrime(APIView):
         #return Response({"message": "Hello, world!"})
 
 
-
-	#def post(self, request, format=None)
-		#sighting = SightingSerializer(data=request)
-		#sighting.is_valid()
-		# True
-		#sighting.validated_data
-		# OrderedDict([('title', ''), ('code', 'print("hello, world")\n'), ('linenos', False), ('language', 'python'), ('style', 'friendly')])
-		#sighting_saved = sighting.save()
-		# <Snippet: Snippet object>
-		#return Response({sighting_id: sighting_saved.sighting_id})
 

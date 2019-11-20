@@ -81,23 +81,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': 'mac',
-        #'NAME': 'test',
-        'NAME': 'dclcdlbr7573cs',
-        #'USER': 'postgres',
-        #'USER': 'ross1972',
-        'USER': 'rergyauiywgbvs',
-        #'PASSWORD': '',
-        #'PASSWORD': 'ross1972',
-        'PASSWORD': 'c8a5d56a7f2c3b140498b02707dcfdd7e9c4a959e0125e7bc1e84cf51a64c64b',
-        #DATABASE_URL = "postgresql://ross1972:ross1972@rosstestdbinstance.cb9zf4fhngc4.us-west-2.rds.amazonaws.com/test"
-        #'HOST': 'localhost',
-        #'HOST': 'rosstestdbinstance.cb9zf4fhngc4.us-west-2.rds.amazonaws.com',
-        'HOST': 'ec2-50-19-221-38.compute-1.amazonaws.com',
-        #'PORT': '5432',
     }
 }
 
@@ -132,7 +115,8 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+#USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
